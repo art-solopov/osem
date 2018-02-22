@@ -186,6 +186,8 @@ GEM
       addressable (~> 2)
     feature (1.4.0)
     ffi (1.9.18)
+    flag-icons-rails (2.5.0)
+      sass (~> 3.2)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     formatador (0.2.5)
@@ -607,6 +609,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   feature
+  flag-icons-rails
   font-awesome-rails
   formtastic (~> 3.1.5)
   formtastic-bootstrap

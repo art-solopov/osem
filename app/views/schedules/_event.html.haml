@@ -6,6 +6,8 @@
                                         :title => speaker.name |
 
     %p
+      - if event.language.present?
+        .event-language.pull-right= language_flag(event)
       = canceled_replacement_event_label(event, event_schedule)
       = replacement_event_notice(event_schedule)
 
@@ -19,8 +21,6 @@
     %p
       = markdown(truncate(event.abstract, length: 400))
       = link_to 'more', conference_program_proposal_path(@conference.short_title, event.id) if event.abstract.length > 400
-    - if event.language.present?
-      %p= event.language
     - if event_schedule.present?
       %span.track
         %span.fa.fa-clock-o

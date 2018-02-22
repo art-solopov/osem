@@ -47,4 +47,15 @@ module EventsHelper
                             include_blank: '(Please select)'
     end
   end
+
+  LANGUAGE_FLAG_SUBS = {
+    'en' => 'us'
+  }.freeze
+
+  # Returns the country flag for the event language
+  def language_flag(event)
+    _, _, code, *_ = ISO_639.find_by_english_name(event.language)
+    code = LANGUAGE_FLAG_SUBS.fetch(code, code)
+    image_tag(image_url("flags/4x3/#{code}.svg"), alt: "Language: #{event.language}")
+  end
 end
